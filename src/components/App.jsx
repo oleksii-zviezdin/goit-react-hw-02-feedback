@@ -1,7 +1,8 @@
+import { Component } from "react";
 import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Section } from "./Section/Section";
-import { Component } from "react";
+import { Notification } from "./Notification/Notification";
 
 export class App extends Component {
 
@@ -45,12 +46,14 @@ export class App extends Component {
             onClickBadBtn={this.handleChangeStateBad}
           />
         </Section>
-        {totalOpinions > 0 &&
+        {totalOpinions <= 0 ?
+          <Notification message="There is no feedback" /> :
           <Section title="Statistics">
             <Statistics
               good={good}
               neutral={neutral}
-              bad={bad} />
+              bad={bad}
+            />
           </Section>}
       </>
     );
