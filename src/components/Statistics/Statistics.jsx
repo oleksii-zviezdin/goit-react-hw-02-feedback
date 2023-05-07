@@ -23,7 +23,6 @@ export class Statistics extends Component {
                     <p>Bad: {bad}</p>
                     <p>Total: {total}</p>
                     <p>Positive feedback: {positivePercentage}%</p>
-
                 </div>
     }
 }
