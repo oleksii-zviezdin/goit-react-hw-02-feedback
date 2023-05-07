@@ -15,22 +15,11 @@ export class App extends Component {
     neutral: this.props.initialValue,
     bad: this.props.initialValue,
   }
-  
-  handleChangeStateGood = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  }
 
-    handleChangeStateNeutral = () => {
+  handleChangeState = (e) => {
+    const { name } = e.currentTarget;
     this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  }
-  
-    handleChangeStateBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [name]: prevState[name] + 1,
     }));
   }
 
@@ -52,9 +41,7 @@ export class App extends Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onClickGoodBtn={this.handleChangeStateGood}
-            onClickNeutralBtn={this.handleChangeStateNeutral}
-            onClickBadBtn={this.handleChangeStateBad}
+            onClick={this.handleChangeState}
           />
         </Section>
         {totalOpinions <= 0 ?
