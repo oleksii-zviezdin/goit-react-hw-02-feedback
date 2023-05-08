@@ -14,6 +14,10 @@ export class App extends Component {
     good: this.props.initialValue,
     neutral: this.props.initialValue,
     bad: this.props.initialValue,
+    key: ["good",
+      "neutral",
+      "bad",
+    ]
   }
 
   handleChangeState = (e) => {
@@ -34,14 +38,14 @@ export class App extends Component {
   }
 
   render() {
-    const { good, neutral, bad } = this.state;
+    const { good, neutral, bad, key } = this.state;
     const totalOpinions = this.countTotalFeedback();  
     
     return (
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']} onLeaveFeedback={this.handleChangeState}
+            options={key} onLeaveFeedback={this.handleChangeState}
           />
         </Section>
         {totalOpinions <= 0 ?

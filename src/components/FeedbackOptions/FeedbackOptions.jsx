@@ -1,22 +1,26 @@
-import { Component }  from "react";
 import PropTypes from 'prop-types'
+import { nanoid } from 'nanoid'
 
-export class FeedbackOptions extends Component {
-    static pyteProps = {
-        onClick: PropTypes.func.isRequired,
-    }
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+    return (
+        <div >
+        {options.map(option => {
+            return <button
+                    key={nanoid()}
+                    type="button"
+                    name={option}
+                    onClick={onLeaveFeedback}>
+                    {option}
+                    </button>
+        })}
+        </div>
+    )
+}
 
-    render() {
-        const { options, onLeaveFeedback } = this.props;
-        return <div >
-                {options.map(option => {
-                    return <button
-                            type="button"
-                            name={option}
-                            onClick={onLeaveFeedback}>
-                            {option}
-                            </button>
-                })}
-                </div>
-    }
+FeedbackOptions.protoTypes = {
+    key: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf({
+        option: PropTypes.string.isRequired,
+    }).isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
 }
