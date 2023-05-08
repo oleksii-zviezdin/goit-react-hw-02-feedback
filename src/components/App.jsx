@@ -41,7 +41,7 @@ export class App extends Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onClick={this.handleChangeState}
+            options={['good', 'neutral', 'bad']} onLeaveFeedback={this.handleChangeState}
           />
         </Section>
         {totalOpinions <= 0 ?

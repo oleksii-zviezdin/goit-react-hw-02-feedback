@@ -7,11 +7,16 @@ export class FeedbackOptions extends Component {
     }
 
     render() {
-        const {onClick } = this.props;
-        return  <div >
-                    <button type="button" name="good" onClick={onClick}>Good</button>
-                    <button type="button" name="neutral" onClick={onClick}>Neutral</button>
-                    <button type="button" name="bad" onClick={onClick}>Bad</button>
+        const { options, onLeaveFeedback } = this.props;
+        return <div >
+                {options.map(option => {
+                    return <button
+                            type="button"
+                            name={option}
+                            onClick={onLeaveFeedback}>
+                            {option}
+                            </button>
+                })}
                 </div>
     }
 }
