@@ -3,6 +3,7 @@
 body {
   /* background: linear-gradient(to top left, rgb(153, 87, 1), rgb(255, 173, 65)); */
   background-image: linear-gradient(to top left,#8800ff, #aa325c);
+  min-height: 100vh;
   color: rgb(20, 8, 98);
   margin: 0;
   padding: 10px 10px;
