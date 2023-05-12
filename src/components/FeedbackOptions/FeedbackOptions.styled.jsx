@@ -13,9 +13,10 @@ export const ButtonFeedbackOptions = styled.button`
     font-weight: 600;
     cursor: pointer;
     transition: background-color 250ms, box-shadow 250ms;
-
+    
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         box-shadow: 0 0 16px 4px  rgb(252, 201, 16);
         color: rgb(252, 201, 16);
     }
