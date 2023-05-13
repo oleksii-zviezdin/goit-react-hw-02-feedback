@@ -23,7 +23,7 @@ export const ButtonFeedbackOptions = styled.button`
     &:active {
         box-shadow: 0 0 16px 4px  rgb(252, 201, 16);
         color: rgb(252, 201, 16);
-        transition: background-color 100ms, box-shadow 100ms;
+        transition: background-color 50ms, box-shadow 50ms;
     }
 `
 
